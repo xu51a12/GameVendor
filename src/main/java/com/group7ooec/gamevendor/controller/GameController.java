@@ -31,5 +31,4 @@ public class GameController {
     public String helloGame() {
         return "home";
     }
-
 }

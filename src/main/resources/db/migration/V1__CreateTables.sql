@@ -3,7 +3,6 @@ CREATE TABLE games
 (
     id               SERIAL         NOT NULL PRIMARY KEY,
     name             VARCHAR(100) NOT NULL,
-    image            VARCHAR(100),
     genre            VARCHAR(100) NOT NULL,
     rating           int,
     price            int          NOT NULL,
@@ -29,20 +28,9 @@ CREATE TABLE library
 CREATE TABLE users
 (
     id       SERIAL          NOT NULL PRIMARY KEY,
+    name     VARCHAR(100) NOT NULL,
     username VARCHAR(100) NOT NULL,
-    password VARCHAR(100) NOT NULL,
-    date_created timestamp default current_timestamp
-);
-
--- Authority
-create table authority (
-    id serial primary key,
-    name varchar(15)
-);
-
-create table users_authority (
-    authority_id int,
-    user_id int
+    password VARCHAR(100) NOT NULL
 );
 
 -- Points Table
@@ -75,15 +63,4 @@ CREATE TABLE wishlist
 (
     game_id int NOT NULL,
     user_id int NOT NULL
-);
-
--- Shopping Cart
-CREATE Table shopping_cart
-(
-    id int NOT NULL,
-    game_id int NOT NULL,
-    price int,
-    quantity int, 
-    image VARCHAR(100),
-    name VARCHAR(100)
 );

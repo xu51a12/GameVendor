@@ -18,9 +18,6 @@ public class Game {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "image")
-    private String image;
-
     @Column(name = "genre")
     private String genre;
 
@@ -33,18 +30,14 @@ public class Game {
     @Column(name = "operating_system")
     private String operating_system;
 	
-    @Column (name = "summary")
-    private String summary;
 //Constructor
-	public Game (Long id, String name, String image, String genre, int rating, double price, String op, String summary){
+	public Game (Long id, String name, String genre, int rating, double price, String op){
 		this.id = id;
 		this.name =name;
-		this.image = image;
 		this.genre = genre;
 		this.rating = rating;
 		this.price= price;
 		this.operating_system= op;
-        this.summary = summary;
 	}
 	
 	public Game() {
@@ -61,14 +54,6 @@ public class Game {
 
     public Long getId() {
         return id;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public void setId(long id) {
@@ -103,21 +88,7 @@ public class Game {
         return operating_system;
     }
 
-    public void setOperating_system(String summary) {
-        this.summary = summary;
-    }
-
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Game=[name=%s, rating=%s/10]", name, rating);
+    public void setOperating_system(String operating_system) {
+        this.operating_system = operating_system;
     }
 }
-
